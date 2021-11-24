@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./sass/custom.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico.png" />
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center alto-100">
+        <div class="row">
+            <div class="col-12">
+                <article class="card d-flex align-items-center h-100 bg-warning shadow-lg">
+                    <div class="card-header imagen-card text-white text-center w-100">
+                        <h1>Cangrejo Ltda</h1>
+                        <h7>Para atras como el cangrejo</h7>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <article class="card h-100 shadow-lg">
+                                    <div class="card-header imagen-card">
+                                        <h5 class="card-title p-3 text-center w-100">Inicio de Sesión</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="formulario" onsubmit="procesaFormulario(event)" class="was-validated formulario">
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Email</label>
+                                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                              <div class="valid-feedback mb-3">Email valido</div>
+                                              <div class="invalid-feedback mb-3">Email invalido</div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                              <input type="password" class="form-control" id="pass" required>
+                                              <div id="emailHelp" class="form-text">La contraseña debe tener minimo 6 caracteres. </div>
+                                              <div class="valid-feedback mb-3">Contraseña valida</div>
+                                              <div class="invalid-feedback mb-3">Contraseña invalida</div>
+                                            </div>
+                                            <button type="submit" class="btn btn-warning shadow">Ingresar</button>
+                                            <p class="p-3">¿No tienes una cuenta? <a href="register.html" class="pe-auto">Crea tu cuenta aquí</a></p>
+                                          </form>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/login.js"></script>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "front-suplementos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wijo-git/Front-Suplementos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wijo-git/Front-Suplementos/issues"
+  },
+  "homepage": "https://github.com/Wijo-git/Front-Suplementos#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

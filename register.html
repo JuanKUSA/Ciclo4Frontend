@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./sass/custom.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico.png" />
+</head>
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center alto-100">
+        <div class="row">
+            <div class="col-12">
+                <article class="card d-flex align-items-center h-100 bg-warning shadow-lg">
+                    <div class="card-header imagen-card text-white text-center w-100">
+                        <h1>Cangrejo Ltda</h1>
+                        <h7>Para atras como el cangrejo</h7>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <article class="card h-100 shadow-lg">
+                                    <div class="card-header imagen-card">
+                                        <h5 class="card-title p-3 text-center w-100">Crear Cuenta</h5>  
+                                    </div>
+                                    <div class="card-body">  
+                                        <form id="form" onsubmit="procesaFormulario(event)">
+                                            <div class="mb-3">
+                                                <label for="lbl_nombre" class="form-label">Nombre</label>
+                                                <input id="name" type="text" class="form-control" placeholder="" aria-label="First name">
+                                              </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Email</label>
+                                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                              <input type="password" class="form-control" id="pass">
+                                              <div id="ayudaPass" class="form-text">La contraseña debe tener minimo 6 caracteres. </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword2" class="form-label">Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="passConfirm">
+                                                <div id="ayudaPass" class="form-text">La contraseña debe tener minimo 6 caracteres. Deben coincidir</div>
+                                              </div>
+                                            <button type="submit" class="btn btn-warning shadow">Crear</button>
+                                            <p class="p-3">¿Ya tienes una cuenta? <a href="login.html" class="pe-auto">Inicia sesión aquí</a></p>
+                                          </form>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/register.js"></script>
+</html>

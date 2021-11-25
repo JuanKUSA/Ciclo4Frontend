@@ -38,7 +38,9 @@ function customEvents() {
   }
 
 //version larga peticion get
-
+/**
+ * 
+ 
   function sendData(email, password){
     try {
       fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -47,7 +49,9 @@ function customEvents() {
     } catch (error) {
       console.log("Error", error);
     }
-  }
+  }* 
+ * 
+ */
 
   async function sendDataAsync(email, password) {
     try {

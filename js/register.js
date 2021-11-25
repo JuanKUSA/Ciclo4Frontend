@@ -16,12 +16,13 @@
       console.log('email: ',emailValue);
       console.log('contraseña: ',passValue);
       console.log('contraseña 2: ',confPassValue);
+
       if (emailValue != "" && isEmailFormated) {
         if(passValue != "" && passValue == confPassValue){
             console.log("Contraseña valida");
             console.log("Email valido!");
             //sendData (emailValue, passValue);
-            await sendDataAsync (nameValue, emailValue, passValue, confPassValue);
+            await sendDataAsync (nameValue, emailValue, passValue);
           }else{
             console.log("Contraseña NO valida!");
             alert("Contraseña NO valida!");
@@ -35,15 +36,27 @@
     }
   }
 
-  async function sendDataAsync(name, email, password, confPass) {
+
+  
+  async function sendDataAsync(name, email, password) {
     try {
-        //const url = `${todosRoute}/1?user=${email}&pass=${password}`;
-        const response = await fetch('http://152.70.156.66:8080/api/user/new');
-        const responseInJsonFormat = await response.json();
-        console.log(`responseInJsonFormat`, responseInJsonFormat);
-        //if (responseInJsonFormat.token) {
-          //console.log(`el usuario se autenticó`);
-        //}
+        // const url = `${todosRoute}/1?user=${email}&pass=${password}`;
+        //const response = await fetch('http://152.70.156.66:8080/api/user/new')
+        // const responseInJsonFormat = await response.json();
+        // console.log(`responseInJsonFormat`, responseInJsonFormat);
+        // if (responseInJsonFormat.token) {
+        // console.log(`el usuario se autenticó`);
+        // }
+        //--------------------------------------------------------------------------------------
+        const response = await fetch('http://152.70.156.66:8080/api/user/new',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify({name,email,password})
+        });
+        let result = await response.json();
+        console.log('resultado', result);
+        alert(result.message);
+
     } catch (error) {
       console.log(`error`, error);
     }

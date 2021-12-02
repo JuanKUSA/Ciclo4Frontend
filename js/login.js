@@ -56,7 +56,7 @@ function customEvents() {
   async function sendDataAsync(email, password) {
     try {
         //const url = `${todosRoute}/1?user=${email}&pass=${password}`;
-        const response = await fetch('http://152.70.156.66:8080/api/user/all');
+        const response = await fetch('http://158.101.23.91:8080/api/user/all');
         const responseInJsonFormat = await response.json();
         console.log(`responseInJsonFormat`, responseInJsonFormat);
         //if (responseInJsonFormat.token) {

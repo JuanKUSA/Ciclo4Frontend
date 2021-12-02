@@ -7,29 +7,169 @@
         <meta name="author" content="" />
         <title>Cangrejo LTDA</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico.png" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="./assets/Favicon0.5x.png">
+        <link rel="stylesheet" href="./sass/custom.css">
     </head>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#!">Cangrejo LTDA</a>
+            <div class="container-fluid">
+                <img src="./img/Recurso 90.75x.png" alt="" class="d-flex " >
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.html">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./users.html">Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="offcanvas" 
+                            data-bs-target="#offcanvas" aria-controls="offcanvas">Ingresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="offcanvas" 
+                            data-bs-target="#offcanvasRegistro" aria-controls="offcanvas">Registrarse</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <!-- OFF-CANVAS LOGIN-->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" >
+            <div class="offcanvas-header">
+              <!-- <h5 class="offcanvas-title">Inicio de Sesión</h5> -->
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- <div>
+                En este menú podrás descubrir todas tus posibilidades dentro de nuestra increíble página.
+              </div> -->
+              <div class="dropdown mt-4">
+                <!-- INICIO formulario -->
+          
+                <article class="card d-flex align-items-center h-100 bg-warning shadow-lg">
+                    <div class="card-header imagen-card text-white text-center w-100">
+                        <h1>Cangrejo Ltda</h1>
+                        <!-- <h7>Para atras como el cangrejo</h7> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <article class="card h-100 shadow-lg">
+                                    <div class="card-header imagen-card">
+                                        <h5 class="card-title p-3 text-center w-100">Inicio de Sesión</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="formulario" onsubmit="procesaFormulario(event)" class="was-validated formulario">
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Email</label>
+                                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                              <div class="valid-feedback mb-3">Email valido</div>
+                                              <div class="invalid-feedback mb-3">Email invalido</div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                              <input type="password" class="form-control" id="pass" required>
+                                              <div id="emailHelp" class="form-text">La contraseña debe tener minimo 6 caracteres. </div>
+                                              <div class="valid-feedback mb-3">Contraseña valida</div>
+                                              <div class="invalid-feedback mb-3">Contraseña invalida</div>
+                                            </div>
+                                            <button type="submit" class="btn btn-warning shadow">Ingresar</button>
+                                            <p class="p-3">¿No tienes una cuenta? <a href="#" class="pe-auto" data-bs-toggle="offcanvas" 
+                                                data-bs-target="#offcanvasRegistro" aria-controls="offcanvas">Crea tu cuenta aquí</a></p>
+                                          </form>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- FIN formulario -->
+              </div>
+            </div>
+          </div>
+
+        <!-- OFF-CANVAS LOGIN-->
+        
+        <!-- OFF-CANVAS REGISTER-->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegistro" aria-labelledby="offcanvasLabel" >
+            <div class="offcanvas-header">
+              <!-- <h5 class="offcanvas-title">Inicio de Sesión</h5> -->
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- <div>
+                En este menú podrás descubrir todas tus posibilidades dentro de nuestra increíble página.
+              </div> -->
+              <div class="dropdown mt-4">
+                <!-- INICIO formulario -->
+          
+                <article class="card d-flex align-items-center h-100 bg-warning shadow-lg">
+                    <div class="card-header imagen-card text-white text-center w-100">
+                        <h1>Cangrejo Ltda</h1>
+                        <!-- <h7>Para atras como el cangrejo</h7> -->
+                    </div>
+                    <div class="card-body" class="opacity-75">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Inicio formulario -->
+                                <article class="card h-100 shadow-lg">
+                                    <div class="card-header imagen-card">
+                                        <h5 class="card-title p-3 text-center w-100">Crear Cuenta</h5>  
+                                    </div>
+                                    <div class="card-body">  
+                                        <form id="form" onsubmit="procesaFormulario(event)" class="was-validated formulario">
+                                            <div class="mb-3">
+                                                <label for="lbl_nombre" class="form-label">Nombre</label>
+                                                <input id="name" type="text" class="form-control" placeholder="" aria-label="First name" required>
+                                                <div class="valid-tooltip">¡Campo Valido!</div>
+                                                <div class="invalid-tooltip">¡Debe completar los datos!</div>
+                                              </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Email</label>
+                                              <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp" required>
+                                              <div class="valid-tooltip">¡Campo Valido!</div>
+                                            <div class="invalid-tooltip">¡Email invalido!</div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                              <input type="password" class="form-control" id="passRegister" required>
+                                              <div id="ayudaPass" class="form-text">La contraseña debe tener minimo 6 caracteres. </div>
+                                              <div class="valid-tooltip">¡Campo Valido!</div>
+                                            <div class="invalid-tooltip">¡Contraseña invalida!</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword2" class="form-label">Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="passConfirm" required>
+                                                <div id="ayudaPass" class="form-text">La contraseña debe tener minimo 6 caracteres. Deben coincidir</div>
+                                                <div class="valid-tooltip">¡Campo Valido!</div>
+                                                <div class="invalid-tooltip">¡Debe completar los datos!</div>
+                                              </div>
+                                            <button type="submit" class="btn btn-warning shadow">Crear</button>
+                                            <p class="p-3">¿Ya tienes una cuenta? <a href="#" class="pe-auto" data-bs-toggle="offcanvas" 
+                                                data-bs-target="#offcanvas" aria-controls="offcanvas">Inicia sesión aquí</a></p>
+                                          </form>
+                                    </div>
+                                </article>
+                                <!-- Fin formulario -->
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- FIN formulario -->
+              </div>
+            </div>
+          </div>
+
+        <!-- OFF-CANVAS -->
+
+
+
+
         <!-- Header - set the background image for the header in the line below-->
         <header class="py-5 bg-image-full" style="background-image: url('img/portada.jpg')">
             <div class="text-center my-5">
-                <img class="img-fluid rounded-circle mb-4" src="img/cangrejo.png" alt="..." />
-                <h1 class="text-white fs-3 fw-bolder">CANGREJO LTDA</h1>
+                <img class="img-fluid rounded mb-4" src="img/Recurso2.png" alt="..." />
                 <p class="text-white-50 mb-0">SUPLEMENTOS DEPORTIVOS</p>
             </div>
         </header>
@@ -38,7 +178,7 @@
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h2>Suplementos Deportivos</h2>
+                        <h2 class="align-items-center">Suplementos Deportivos</h2>
                         <p class="lead">Al incluir en tu alimentación algún suplemento alimenticio, puedes contribuir a la 
                             pérdida de peso de manera natural, ya que de ellos obtendrás proteínas, grasas saludables y 
                             carbohidratos, que complementados con ejercicio harán que mejores tu figura.</p>
@@ -57,7 +197,7 @@
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h2>TU ERES EL CAMBIO</h2>
+                        <h2 class="align-items-center">TU ERES EL CAMBIO</h2>
                         <p class="lead">¿Eres nuevo en el mundo de los suplementos alimenticios? Si has
                              decidido comenzar a tomar vitaminas, minerales o algún otro elemento para ayudar a tu 
                              cuerpo y su nutrición, entonces esta es tu oportunidad de comenzar. </p>
@@ -74,4 +214,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
 </html>

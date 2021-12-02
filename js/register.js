@@ -1,8 +1,8 @@
   async function procesaFormulario (event){
     try {
       const nombre = document.querySelector("#name");
-      const email = document.querySelector("#email");
-      const contraseña = document.querySelector("#pass");
+      const email = document.querySelector("#emailRegister");
+      const contraseña = document.querySelector("#passRegister");
       const confContraseña = document.querySelector("#passConfirm");
       event.preventDefault();
       const nameValue = nombre.value.trim();
@@ -41,14 +41,14 @@
   async function sendDataAsync(name, email, password) {
     try {
         // const url = `${todosRoute}/1?user=${email}&pass=${password}`;
-        //const response = await fetch('http://152.70.156.66:8080/api/user/new')
+        //const response = await fetch('http://158.101.23.91:8080/api/user/new')
         // const responseInJsonFormat = await response.json();
         // console.log(`responseInJsonFormat`, responseInJsonFormat);
         // if (responseInJsonFormat.token) {
         // console.log(`el usuario se autenticó`);
         // }
         //--------------------------------------------------------------------------------------
-        const response = await fetch('http://152.70.156.66:8080/api/user/new',{
+        const response = await fetch('http://158.101.23.91:8080/api/user/new',{
             method: 'POST',
             headers: {'Content-Type': 'application/json;charset=utf-8'},
             body: JSON.stringify({name,email,password})

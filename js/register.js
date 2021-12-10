@@ -1,6 +1,7 @@
-  async function procesaFormulario (event){
+  async function FormRegister (event){
     try {
       const nombre = document.querySelector("#name");
+      //const nombre = document.getElementById("name");
       const email = document.querySelector("#emailRegister");
       const contraseña = document.querySelector("#passRegister");
       const confContraseña = document.querySelector("#passConfirm");
@@ -17,19 +18,24 @@
       console.log('contraseña: ',passValue);
       console.log('contraseña 2: ',confPassValue);
 
-      if (emailValue != "" && isEmailFormated) {
-        if(passValue != "" && passValue == confPassValue){
-            console.log("Contraseña valida");
-            console.log("Email valido!");
-            //sendData (emailValue, passValue);
-            await sendDataAsync (nameValue, emailValue, passValue);
+      if (nameValue != "" && emailValue != "" && confPassValue != "" && passValue != "") {
+        if(isEmailFormated){
+          console.log("Email valido");
+          if (passValue != confPassValue) {
+            console.log("contraseñas no coinciden");
+            alert ("la contraseña no coincide");
+            //$("confPassValue").focus();
           }else{
-            console.log("Contraseña NO valida!");
-            alert("Contraseña NO valida!");
+            console.log("datos enviados !!!");
+            await sendDataAsyncRegis (nameValue, emailValue, passValue);
           }
+        }else{
+          console.log("Email valido!");
+          alert("Formato de email no correspodne")
+        }  
       }else{
-        console.log("Email NO valido!");
-        alert("Email NO valido !");
+        console.log("Falta algun dato!");
+        alert("Complete los datos por favor !");
       }
     } catch (error) {
       console.log(`error`, error);
@@ -38,7 +44,7 @@
 
 
   
-  async function sendDataAsync(name, email, password) {
+  async function sendDataAsyncRegis(name, email, password) {
     try {
         // const url = `${todosRoute}/1?user=${email}&pass=${password}`;
         //const response = await fetch('http://158.101.23.91:8080/api/user/new')
@@ -51,13 +57,19 @@
         const response = await fetch('http://158.101.23.91:8080/api/user/new',{
             method: 'POST',
             headers: {'Content-Type': 'application/json;charset=utf-8'},
-            body: JSON.stringify({name,email,password})
+            body: JSON.stringify({
+              name,
+              email,
+              password})
         });
         let result = await response.json();
         console.log('resultado', result);
-        alert(result.message);
+        alert("Registro exitoso", result.message);
+        //debugger
+        window.open("http://127.0.0.1:5500/index.html","_self")
 
     } catch (error) {
       console.log(`error`, error);
     }
   }
+

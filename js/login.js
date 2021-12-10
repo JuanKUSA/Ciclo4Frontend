@@ -1,11 +1,3 @@
-function customEvents() {
-    try {
-      const loginForm = document.querySelector("#formulario");
-      //console.log('formulario ',loginForm);
-    } catch (error) {
-      console.log(`error`, error);
-    }
-  }
 
   async function procesaFormulario (event){
     try {
@@ -18,19 +10,18 @@ function customEvents() {
       const isEmailFormated = emailExpression.test(emailValue);
       console.log('email: ',emailValue);
       console.log('contraseña: ',passValue);
-      if (emailValue != "" && isEmailFormated) {
-        console.log("Email valido!");
-        //sendData (emailValue, passValue);
-        await sendDataAsync (emailValue, passValue);
-      }else{
-        console.log("Email NO valido!");
-        alert("Email NO valido !");
-      }
-      if(passValue != ""){
-        console.log("Contraseña valida");
-      }else{
-        console.log("Contraseña NO valida!");
-        alert("Contraseña NO valida!");
+
+      if (emailValue != "" && passValue != "") {
+        if (isEmailFormated) {
+          console.log("Email valido!");
+          await sendDataAsync (emailValue, passValue);
+        }else{
+          console.log("Email NO valido!");
+          alert("Formato de email no valido")
+        }
+      } else {
+        console.log("datos incompletos");
+        alert("Complete los datos por favor");
       }
     } catch (error) {
       console.log(`error`, error);
@@ -55,13 +46,15 @@ function customEvents() {
 
   async function sendDataAsync(email, password) {
     try {
-        //const url = `${todosRoute}/1?user=${email}&pass=${password}`;
-        const response = await fetch('http://158.101.23.91:8080/api/user/all');
+        const response = await fetch('http://158.101.23.91:8080/api/user/'+ email +'/'+ password);
         const responseInJsonFormat = await response.json();
         console.log(`responseInJsonFormat`, responseInJsonFormat);
-        //if (responseInJsonFormat.token) {
-          //console.log(`el usuario se autenticó`);
-        //}
+        if (responseInJsonFormat.id == null) {
+          alert("Usuario o contraseña invalida");
+        }else{
+          alert("Bienvenid@ "+ responseInJsonFormat.name)
+          window.open("http://127.0.0.1:5500/Front-Suplementos/index.html?","_self")
+        }
     } catch (error) {
       console.log(`error`, error);
     }
